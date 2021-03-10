@@ -19,6 +19,7 @@
 # - you may use the unicode array for output: ['↑', '↗', '→', '↘', '↓', '↙', '←', '↖']
 
 begin
+  # 將箭頭用 hash 存起來，之後用 key 得出箭頭
   unicode = {
     '1' => '↑',
     '1-l' => '↖',
@@ -47,7 +48,9 @@ begin
   end
 
   base_3 = directions.to_s(3).to_i
-  # base_3 為單個數時
+  # 將 directions 
+
+  # base_3 為單個數且數字大於等於0時
   if [1].include?(initial_direction) && base_3 >= 0
     case
       when base_3 == 0
@@ -172,16 +175,25 @@ begin
 
   base_3_arr = base_3.to_s.split('').to_a
   rs = []
-  # 判斷 base_3 為多個數時
+  i = 0
+  # 判斷 base_3 為多個數且陣列數量大於2時
   if [1].include?(initial_direction) && base_3_arr.size > 2
+    puts "Ok, you want to first look this way: #{unicode['1']}"
+    puts ""
+    puts "In base 3, the second input reads as: #{base_3}"
+    puts "So that's how you want to go: #{rs.join}"
+    puts ""
+    puts "Let's go then!"
     base_3_arr.each do |n|
       case
       when n == '0'
         puts unicode['1']
       when n == '1'
         puts unicode['1-l']
+        i -=1
       when n == '2'
         puts unicode['1-r']
+        i +=1
       end
     end
   end
@@ -206,14 +218,36 @@ begin
   end
 
   if [3].include?(initial_direction) && base_3_arr.size > 2
+    puts "Ok, you want to first look this way: #{unicode['3']}"
+    puts ""
+    puts "In base 3, the second input reads as: #{base_3}"
+    puts "So that's how you want to go: #{rs.join}"
+    puts ""
+    puts "Let's go then!"
     base_3_arr.each do |n|
       case
       when n == '0'
-        puts unicode['3']
+
+        array = []
+        (i).times { array.push(" ")}
+        array.push(unicode['3'])
+        puts array.join
       when n == '1'
-        puts unicode['3-l']
+
+        array = []
+        (i + 1).times { array.push(" ")}
+        array.push(unicode['3-l'])
+        puts array.join
+
+        i += 1
       when n == '2'
-        puts unicode['3-r']
+
+        array = []
+        (i - 1).times { array.push(" ")}
+        array.push(unicode['3-r'])
+        puts array.join
+
+        i -= 1
       end
     end
   end
