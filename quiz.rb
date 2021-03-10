@@ -48,7 +48,7 @@ begin
   end
 
   # base_3 為單個數時
-  if [1].include?(initial_direction) && base_3 >= 0
+  if [1].include?(initial_direction) && base_3.size >= 0
     case
       when base_3 == 0
         puts ""
@@ -58,6 +58,7 @@ begin
         puts "So that's how you want to go: #{unicode['1']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['1']
       when base_3 == 1
         puts ""
         puts "Ok, you want to first look this way: #{unicode['1']}"
@@ -66,6 +67,7 @@ begin
         puts "So that's how you want to go: #{unicode['1-l']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['1-l']
       when base_3 == 2
         puts ""
         puts "Ok, you want to first look this way: #{unicode['1']}"
@@ -74,6 +76,7 @@ begin
         puts "So that's how you want to go: #{unicode['1-r']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['1-r']
     end
   end
 
@@ -86,7 +89,7 @@ begin
         puts "In base 3, the second input reads as: #{base_3}"
         puts "So that's how you want to go: #{unicode['2']}"
         puts ""
-        puts "Let's go then!"
+        puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 1
         puts ""
         puts "Ok, you want to first look this way: #{unicode['2']}"
@@ -102,7 +105,7 @@ begin
         puts "In base 3, the second input reads as: #{base_3}"
         puts "So that's how you want to go: #{unicode['2-r']}"
         puts ""
-        puts "Let's go then!"
+        puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
     end
   end
 
@@ -116,6 +119,7 @@ begin
         puts "So that's how you want to go: #{unicode['3']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['3']
       when base_3 == 1
         puts ""
         puts "Ok, you want to first look this way: #{unicode['3']}"
@@ -124,6 +128,7 @@ begin
         puts "So that's how you want to go: #{unicode['3-l']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['3-l']
       when base_3 == 2
         puts ""
         puts "Ok, you want to first look this way: #{unicode['3']}"
@@ -132,10 +137,11 @@ begin
         puts "So that's how you want to go: #{unicode['3-r']}"
         puts ""
         puts "Let's go then!"
+        puts unicode['3-r']
     end
   end
 
-  if [4].include?(initial_direction) && base_3>= 0
+  if [4].include?(initial_direction) && base_3 >= 0
     case
       when base_3 == 0
         puts ""
@@ -144,7 +150,7 @@ begin
         puts "In base 3, the second input reads as: #{base_3}"
         puts "So that's how you want to go: #{unicode['4']}"
         puts ""
-        puts "Let's go then!"
+        puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 1
         puts ""
         puts "Ok, you want to first look this way: #{unicode['4']}"
@@ -152,7 +158,7 @@ begin
         puts "In base 3, the second input reads as: #{base_3}"
         puts "So that's how you want to go: #{unicode['4-l']}"
         puts ""
-        puts "Let's go then!"
+        puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 2
         puts ""
         puts "Ok, you want to first look this way: #{unicode['4']}"
@@ -160,13 +166,13 @@ begin
         puts "In base 3, the second input reads as: #{base_3}"
         puts "So that's how you want to go: #{unicode['4-r']}"
         puts ""
-        puts "Let's go then!"
+        puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
     end
   end
 
   base_3_arr = base_3.to_s.split('').to_a
   # 判斷 base_3 為多個數時
-  if [1].include?(initial_direction) && base_3.size > 2
+  if [1].include?(initial_direction) && base_3_arr.size > 2
     base_3_arr.each do |n|
       case
       when n == '0'
@@ -179,7 +185,7 @@ begin
     end
   end
 
-  if [2].include?(initial_direction) && base_3.size > 2
+  if [2].include?(initial_direction) && base_3_arr.size > 2
     base_3_arr.each do |n|
       case
       when n == '0'
@@ -192,7 +198,7 @@ begin
     end
   end
 
-  if [3].include?(initial_direction) && base_3.size > 2
+  if [3].include?(initial_direction) && base_3_arr.size > 2
     base_3_arr.each do |n|
       case
       when n == '0'
@@ -205,15 +211,15 @@ begin
     end
   end
 
-  if [4].include?(initial_direction) && base_3.size > 2
+  if [4].include?(initial_direction) && base_3_arr.size > 2
     base_3_arr.each do |n|
       case
       when n == '0'
-        puts unicode['3']
+        puts unicode['4']
       when n == '1'
-        puts unicode['3-l']
+        puts unicode['4-l']
       when n == '2'
-        puts unicode['3-r']
+        puts unicode['4-r']
       end
     end
   end
