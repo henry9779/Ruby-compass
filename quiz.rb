@@ -21,18 +21,14 @@
 begin
   # 將箭頭用 hash 存起來，之後用 key 得出箭頭
   unicode = {
-    '1' => '↑',
-    '1-l' => '↖',
-    '1-r' => '↗',
-    '2' => '→',
-    '2-l' => '↗',
-    '2-r' => '↘',
-    '3' => '↓',
-    '3-l' => '↘',
-    '3-r' => '↙',
-    '4' => '←',
-    '4-l' => '↙',
-    '4-r' => '↖',
+    'N' => '↑',
+    'NE' => '↗',
+    'E' => '→',
+    'ES' => '↘',
+    'S' => '↓',
+    'SW' => '↙',
+    'W' => '←',
+    'WN' => '↖'
   }
 
   print('Enter an integer between 1 and 4 and a positive integer: ')
@@ -48,38 +44,38 @@ begin
   end
 
   base_3 = directions.to_s(3).to_i
-  # 將 directions 
+  # 將 directions 做 3 進位
 
   # base_3 為單個數且數字大於等於0時
   if [1].include?(initial_direction) && base_3 >= 0
     case
       when base_3 == 0
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['1']}"
+        puts "Ok, you want to first look this way: #{unicode['N']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['1']}"
+        puts "So that's how you want to go: #{unicode['N']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['1']
+        puts unicode['N']
       when base_3 == 1
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['1']}"
+        puts "Ok, you want to first look this way: #{unicode['N']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['1-l']}"
+        puts "So that's how you want to go: #{unicode['WN']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['1-l']
+        puts unicode['WN']
       when base_3 == 2
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['1']}"
+        puts "Ok, you want to first look this way: #{unicode['N']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['1-r']}"
+        puts "So that's how you want to go: #{unicode['NE']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['1-r']
+        puts unicode['NE']
     end
   end
 
@@ -87,26 +83,26 @@ begin
     case
       when base_3 == 0
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['2']}"
+        puts "Ok, you want to first look this way: #{unicode['E']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['2']}"
+        puts "So that's how you want to go: #{unicode['E']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 1
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['2']}"
+        puts "Ok, you want to first look this way: #{unicode['E']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['2-l']}"
+        puts "So that's how you want to go: #{unicode['NE']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 2
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['2']}"
+        puts "Ok, you want to first look this way: #{unicode['E']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['2-r']}"
+        puts "So that's how you want to go: #{unicode['ES']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
     end
@@ -116,31 +112,31 @@ begin
     case
       when base_3 == 0
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['3']}"
+        puts "Ok, you want to first look this way: #{unicode['S']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['3']}"
+        puts "So that's how you want to go: #{unicode['S']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['3']
+        puts unicode['S']
       when base_3 == 1
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['3']}"
+        puts "Ok, you want to first look this way: #{unicode['S']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['3-l']}"
+        puts "So that's how you want to go: #{unicode['ES']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['3-l']
+        puts unicode['ES']
       when base_3 == 2
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['3']}"
+        puts "Ok, you want to first look this way: #{unicode['S']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['3-r']}"
+        puts "So that's how you want to go: #{unicode['SW']}"
         puts ""
         puts "Let's go then!"
-        puts unicode['3-r']
+        puts unicode['SW']
     end
   end
 
@@ -148,37 +144,37 @@ begin
     case
       when base_3 == 0
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['4']}"
+        puts "Ok, you want to first look this way: #{unicode['W']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['4']}"
+        puts "So that's how you want to go: #{unicode['W']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 1
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['4']}"
+        puts "Ok, you want to first look this way: #{unicode['W']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['4-l']}"
+        puts "So that's how you want to go: #{unicode['SW']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
       when base_3 == 2
         puts ""
-        puts "Ok, you want to first look this way: #{unicode['4']}"
+        puts "Ok, you want to first look this way: #{unicode['W']}"
         puts ""
         puts "In base 3, the second input reads as: #{base_3}"
-        puts "So that's how you want to go: #{unicode['4-r']}"
+        puts "So that's how you want to go: #{unicode['WN']}"
         puts ""
         puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
     end
   end
 
   base_3_arr = base_3.to_s.split('').to_a
-  rs = []
   i = 0
+  rs = []
   # 判斷 base_3 為多個數且陣列數量大於2時
   if [1].include?(initial_direction) && base_3_arr.size > 2
-    puts "Ok, you want to first look this way: #{unicode['1']}"
+    puts "Ok, you want to first look this way: #{unicode['N']}"
     puts ""
     puts "In base 3, the second input reads as: #{base_3}"
     puts "So that's how you want to go: #{rs.join}"
@@ -187,13 +183,24 @@ begin
     base_3_arr.each do |n|
       case
       when n == '0'
-        puts unicode['1']
+        arr = []
+        (i).times { arr.push(" ")}
+        arr.push(unicode['N'])
+        puts arr.join
+
       when n == '1'
-        puts unicode['1-l']
-        i -=1
+        arr = []
+        (i + 1).times { arr.push(" ")}
+        arr.push(unicode['WN'])
+        puts arr.join
+        i += 1
+
       when n == '2'
-        puts unicode['1-r']
-        i +=1
+        arr = []
+        (i + 1).times { arr.push(" ")}
+        arr.push(unicode['NE'])
+        puts arr.join
+        i -= 1
       end
     end
   end
@@ -202,14 +209,14 @@ begin
     base_3_arr.each do |n|
       case
       when n == '0'
-        rs << unicode['2']
+        rs << unicode['E']
       when n == '1'
-        rs << unicode['2-l']
+        rs << unicode['NE']
       when n == '2'
-        rs << unicode['2-r']
+        rs << unicode['ES']
       end
     end
-    puts "Ok, you want to first look this way: #{unicode['2']}"
+    puts "Ok, you want to first look this way: #{unicode['E']}"
     puts ""
     puts "In base 3, the second input reads as: #{base_3}"
     puts "So that's how you want to go: #{rs.join}"
@@ -218,37 +225,35 @@ begin
   end
 
   if [3].include?(initial_direction) && base_3_arr.size > 2
-    puts "Ok, you want to first look this way: #{unicode['3']}"
+    puts "Ok, you want to first look this way: #{unicode['S']}"
     puts ""
     puts "In base 3, the second input reads as: #{base_3}"
     puts "So that's how you want to go: #{rs.join}"
-    puts ""
     puts "Let's go then!"
     base_3_arr.each do |n|
       case
       when n == '0'
+        arr = []
+        (i).times { arr.push(" ")}
+        arr.push(unicode['S'])
+        puts arr.join
 
-        array = []
-        (i).times { array.push(" ")}
-        array.push(unicode['3'])
-        puts array.join
       when n == '1'
-
-        array = []
-        (i + 1).times { array.push(" ")}
-        array.push(unicode['3-l'])
-        puts array.join
-
+        arr = []
+        (i + 1).times { arr.push(" ")}
+        arr.push(unicode['ES'])
+        puts arr.join
         i += 1
+
       when n == '2'
-
-        array = []
-        (i - 1).times { array.push(" ")}
-        array.push(unicode['3-r'])
-        puts array.join
-
-        i -= 1
+        arr = []
+        (i + 1).times { arr.push(" ")}
+        arr.push(unicode['SW'])
+        puts arr.join
+        i += 1
       end
+      # 先抓出最小值
+      # 如果最小值為負數歸零
     end
   end
 
@@ -256,14 +261,14 @@ begin
     base_3_arr.each do |n|
       case
       when n == '0'
-        rs << unicode['4']
+        rs << unicode['W']
       when n == '1'
-        rs << unicode['4-l']
+        rs << unicode['SW']
       when n == '2'
-        rs << unicode['4-r']
+        rs << unicode['WN']
       end
     end
-      puts "Ok, you want to first look this way: #{unicode['4']}"
+      puts "Ok, you want to first look this way: #{unicode['W']}"
       puts ""
       puts "In base 3, the second input reads as: #{base_3}"
       puts "So that's how you want to go: #{rs.join}"
