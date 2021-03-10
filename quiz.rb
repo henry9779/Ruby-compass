@@ -104,6 +104,60 @@ begin
     end
   end
 
+  base_3_arr = base_3.to_s.split('').to_a
+  # 判斷 base_3 為多個數時
+  if [1].include?(initial_direction) && base_3.size > 1
+    base_3_arr.each do |n|
+      case
+      when n == '0'
+        puts unicode['1']
+      when n == '1'
+        puts unicode['1-l']
+      when n == '2'
+        puts unicode['1-r']
+      end
+    end
+  end
+
+  if [2].include?(initial_direction) && base_3.size > 1
+    base_3_arr.each do |n|
+      case
+      when n == '0'
+        puts unicode['2']
+      when n == '1'
+        puts unicode['2-l']
+      when n == '2'
+        puts unicode['2-r']
+      end
+    end
+  end
+
+  if [3].include?(initial_direction) && base_3.size > 1
+    base_3_arr.each do |n|
+      case
+      when n == '0'
+        puts unicode['3']
+      when n == '1'
+        puts unicode['3-l']
+      when n == '2'
+        puts unicode['3-r']
+      end
+    end
+  end
+
+  if [4].include?(initial_direction) && base_3.size > 1
+    base_3_arr.each do |n|
+      case
+      when n == '0'
+        puts unicode['3']
+      when n == '1'
+        puts unicode['3-l']
+      when n == '2'
+        puts unicode['3-r']
+      end
+    end
+  end
+
 rescue ArgumentError => e
   print("Incorrect input, giving up.\n")
   exit
