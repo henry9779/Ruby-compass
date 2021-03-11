@@ -43,8 +43,37 @@ begin
     raise ArgumentError
   end
 
-  base_3 = directions.to_s(3).to_i
-  # 將 directions 做 3 進位
+
+  def direction_view(routes, initial_direction, directions)
+    # 將 directions 做 3 進位
+    base_3 = directions.to_s(3).to_i
+    maps = get_directions_maps(initial_direction, directions)
+    go_maps = maps[1]
+    base_3_arr = base_3.to_s.split('')
+    # steps = []
+    # base_3_arr.each do |n|
+    #   steps << go_maps[n]
+    # end
+    # steps.map { |step| routes[step] }
+    base_3_arr.map { |n| routes[go_maps[n]] }.join('')
+  end
+
+  def get_directions_maps(initial_direction, directions)
+    config = {
+      '10': ['N', ['N', 'WN', 'NE']],
+      '11': ['WN', []],
+      '12': ['NE', []]
+    }
+    config["#{initial_direction}#{directions}"]
+  end
+
+  expect = ->(a = [], b = '') do
+    rs = direction_view(routes, a[0], a[1])
+    p rs
+    p rs == b
+  end
+
+  expect.([1, 0], '0121021')
 
   # base_3 為單個數且數字大於等於0時
   if [1].include?(initial_direction) && base_3 >= 0
