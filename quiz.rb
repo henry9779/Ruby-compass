@@ -76,7 +76,7 @@ begin
   expect.([1, 0], '0121021')
 
   # base_3 為單個數且數字大於等於0時
-  if [1].include?(initial_direction) && base_3 >= 0
+  if [1].include?(initial_direction) && directions >= 0
     case
       when base_3 == 0
         puts ""
@@ -108,7 +108,7 @@ begin
     end
   end
 
-  if [2].include?(initial_direction) && base_3 >= 0
+  if [2].include?(initial_direction) && directions >= 0
     case
       when base_3 == 0
         puts ""
@@ -137,7 +137,7 @@ begin
     end
   end
 
-  if [3].include?(initial_direction) && base_3 >= 0
+  if [3].include?(initial_direction) && directions >= 0
     case
       when base_3 == 0
         puts ""
@@ -169,7 +169,7 @@ begin
     end
   end
 
-  if [4].include?(initial_direction) && base_3 >= 0
+  if [4].include?(initial_direction) && directions >= 0
     case
       when base_3 == 0
         puts ""
