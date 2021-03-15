@@ -20,23 +20,23 @@
 
 begin
   # 將箭頭用 hash 存起來，之後用 key 得出箭頭
-  routes = {
-    '1' => {
+  route_table = {
+    1 => {
       '0' => '↑',
       '1' => '↖',
       '2' => '↗',
     },
-    '2' => {
+    2 => {
       '0' => '→',
       '1' => '↗',
       '2' => '↘',
     },
-    '3' => {
+    3 => {
       '0' => '↓',
       '1' => '↘',
       '2' => '↙',
     },
-    '4' => {
+    4 => {
       '0' => '←',
       '1' => '↙',
       '2' => '↖',
@@ -56,15 +56,29 @@ begin
   end
 
   base_3 = directions.to_s(3).to_i
-
   base_3_arr = base_3.to_s.split('')
+  route = route_table[initial_direction]
+  route_map = base_3_arr.map{ |n| route[n]}.join
 
-  def arrow_arr()
+  puts ""
+  puts "Ok, you want to first look this way: #{route['0']}"
+  puts ""
+  puts "In base 3, the second input reads as: #{base_3}"
+  puts "So that's how you want to go: #{route_map}"
+  puts ""
+
+  if [1, 3].include?(initial_direction) && !directions.nil?
+    case
+    when initial_direction == 1
+      puts "Let's go then!"
+    when initial_direction == 3
+      puts "Let's go then!"
+    end
   end
 
-  def direction_view(routes, initial_direction, directions)
+  if [2, 4].include?(initial_direction) && !directions.nil?
+    puts "I don't want to have the sun in my eyes, but by all means have a go at it!"
   end
-
 
 rescue ArgumentError => e
   print("Incorrect input, giving up.\n")
