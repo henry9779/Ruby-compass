@@ -58,7 +58,7 @@ begin
   base_3 = directions.to_s(3).to_i
   base_3_arr = base_3.to_s.split('')
   route = route_table[initial_direction]
-  steps = base_3_arr.map{ |n| route[n]}
+  steps = base_3_arr.map{ |n| route[n] }
 
   puts ""
   puts "Ok, you want to first look this way: #{route['0']}"
@@ -67,26 +67,33 @@ begin
   puts "So that's how you want to go: #{steps.join}"
   puts ""
 
-  def go(steps)
+  def go(steps, n)
     puts "Let's go then!"
-    i = 0
-    space = ""
-    case
-    when ['↖','↙'].include?(steps)
-      i -= 1
-    when ['↗','↘'].include?(steps)
-      i += 1
+
+    steps.each do |step|
+      space = ""
+      n.times{ space += " " }
+      space += step
+
+      case
+      when ['↙', '↗'].include?(step)
+        n = n - 1
+      when ['↘', '↖'].include?(step)
+        n = n + 1
+      end
+      puts space
     end
-    puts i
   end
 
   if [1, 3].include?(initial_direction) && !directions.nil?
     case
     when initial_direction == 1
       steps.reverse!
-      go(steps)
+      n = steps.count('↖')
+      go(steps, n)
     when initial_direction == 3
-      # go(steps)
+      n = steps.count('↙')
+      go(steps, n)
     end
   end
 
